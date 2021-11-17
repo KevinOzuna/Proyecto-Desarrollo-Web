@@ -1,0 +1,529 @@
+/*CSS reset*/
+*{
+	margin: 0;
+	padding: 0;
+}
+
+/*Formato h1*/
+h1{
+	color: #000080;
+	font-style: normal;
+	font-family: 'Andada Pro', serif;
+	font-size: 150%;
+	font-weight: bold;
+	text-align: left;
+	text-transform: capitalize;
+	line-height: none;
+	text-decoration: underline;
+	letter-spacing: 2px;
+	word-spacing: 5px;
+	margin-bottom: 10px;
+}
+
+/*Formato h2*/
+h2{
+	width: 30%;
+	color: #000080;
+	font-style: italic;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 125%;
+	font-weight: normal;
+	text-align: center;
+	text-transform: capitalize;
+	line-height: none;
+	text-decoration: none;
+	letter-spacing: 3px;
+	word-spacing: 8px;
+	margin: 1px 2px 1px 2 px;
+}
+
+
+/*Formato h3*/
+h3{
+	color: #008080;
+	font-style: normal;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 100%;
+	font-weight: normal;
+	text-align:left;
+	text-transform: capitalize;
+	line-height: none;
+	text-decoration: none;
+	letter-spacing: 0px;
+	word-spacing: 0;
+	margin: 1px 2px 1px 2 px;
+	animation-duration: 2s;
+	animation-name: aparition;
+	animation-iteration-count: infinite;
+}
+
+/*Formato h4*/
+h4{
+	color: #2980B9;
+	font-style: normal;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 100%;
+	font-weight: normal;
+	text-align:right;
+	text-transform: capitalize;
+	line-height: none;
+	text-decoration: none;
+	letter-spacing: 4px;
+	word-spacing: 10px;
+	animation-duration: 2s;
+	animation-name: aparition;
+	animation-iteration-count: infinite;
+}
+
+#grilla {
+   display: grid;
+   grid-template-areas:
+     "header header header"
+     "main main publicidad"
+     "main main publicidad"
+     "footer footer footer";
+   grid-template-rows: 100px 1fr 1fr 150px; 
+   grid-template-columns: 20% auto 15%;
+   grid-row-gap: 10px;
+   grid-column-gap: 10px;
+   height: 100vh;
+   margin: 0;	 
+   justify-items: center;
+   align-items: stretch;
+}
+
+.border {
+   border: 1px solid black;
+   justify-items: center;
+}
+
+header {
+   grid-area: header;
+   align-items: stretch;
+}
+footer {
+   grid-area: footer;
+}
+main#main {
+   grid-area: main;     
+}
+
+aside {
+   grid-area: publicidad;
+}
+
+nav {
+   grid-area: nav;
+   justify-items: center;
+}
+
+/*Menu de navegacion desplegable*/
+body header nav ul {
+	list-style: none;
+	font-size: 0;
+	border-color: black;
+	border-width: 1px;
+	border-style: solid;
+	margin-top: 0px;
+}
+
+body header nav li {
+	display: inline-block;
+	width: 12%;
+	position: relative;
+	font-size: 14px;
+	padding: 5px 5px 0px 5px;
+	background-color: lightgray;
+	margin: 0 0 0 0;
+	border-color: gray;
+	border-width: 2px;
+}
+
+body header nav ul ul {
+	position: absolute;
+	display: none;
+}
+
+body header nav ul li:hover{
+	background-color: greenyellow;
+}
+
+body header nav ul li:hover ul {
+	display: block;
+}
+
+body header nav ul ul li {
+	display: block;
+	width: 95%;
+}
+
+
+/*Texto menu de navegacion*/
+body header nav ul li a {
+	color: #000;
+	font-style: normal;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 100%;
+	font-weight: normal;
+	text-align:right;
+	text-transform: capitalize;
+	line-height: none;
+	text-decoration: none;
+	letter-spacing: 4px;
+	word-spacing: 10px;
+}
+
+section nav ul{
+	list-style: none;
+	font-size: 0;
+	align-content: center;
+	margin: 1% 25% 1% 25%;
+}
+
+section nav li {
+	display: inline-block;
+	width: 50%;
+	font-size: 16px;
+}
+
+/*Formato texto parrafos*/
+p {
+	color: black;
+	font-style: normal;
+	font-family: 'PT Sans', sans-serif;
+	font-size: 100%;
+	font-weight: normal;
+	text-align: justify-all;
+	text-transform: none;
+	line-height: none;
+	text-decoration: none;
+	letter-spacing: 1px;
+	word-spacing: 3px;
+}
+
+/*Formato texto Objetivos*/
+ul li {
+	list-style: square;
+	list-style-position: outside;
+	color: black;
+	font-style: normal;
+	font-family: 'PT Sans', sans-serif;
+	font-size: 100%;
+	font-weight: normal;
+	text-align: justify-all;
+	text-transform: none;
+	line-height: none;
+	text-decoration: none;
+	letter-spacing: 1px;
+	word-spacing: 3px;
+}
+
+/*Formato vertical slider*/
+aside{
+	grid-area: publicidad;
+	color: goldenrod;
+	font-style: normal;
+	font-family: 'PT Sans', sans-serif;
+	font-size: 200%;
+	font-weight: normal;
+	text-align: center;
+	text-transform: none;
+	line-height: none;
+	text-decoration: none;
+	letter-spacing: 2px;
+	word-spacing: 0px;
+}
+
+/*Formato footer*/
+footer{
+	grid-area: footer;
+	width: 100%;
+	height: 150px;
+	border: 2px solid #000;
+	background-image: url("images/footer_background.jpg");
+	background-size: contain;
+	margin: 10px 10px 10px 10px;
+}
+
+/*Formato texto footer*/
+footer div span {
+	color: darkred;
+	font-style: italic;
+	font-family: 'PT Sans', sans-serif;
+	font-size: 100%;
+	font-weight: normal;
+	text-align: justify-all;
+	text-transform: none;
+	line-height: none;
+	text-decoration: none;
+	letter-spacing: 0px;
+	word-spacing: 3px;
+	padding: 10px 10px 10px 10px;
+	clear: right;
+}
+
+/*Formato de clase beneficios para el texto "beneficios" de la tabla productos*/
+table tr td ol li{
+	color: black;
+	font-style: normal;
+	font-family: 'PT Sans', sans-serif;
+	font-size: 100%;
+	font-weight: normal;
+	text-align: justify-all;
+	text-transform: none;
+	line-height: none;
+	text-decoration: none;
+	letter-spacing: 1px;
+	word-spacing: 3px;
+	border: 10px 10px 10px 10px;
+	border-style: dotted;
+	border-color: #69CC03;
+	border-width: 1px;
+	margin: 1% 5% 1% 5%;
+}
+
+/*Formato Descripcion para el texto de la tabla productos*/
+table tr td{
+	color: black;
+	font-style: normal;
+	font-family: 'PT Sans', sans-serif;
+	font-size: 100%;
+	font-weight: normal;
+	text-align: justify-all;
+	text-transform: none;
+	line-height: none;
+	text-decoration: none;
+	letter-spacing: 1px;
+	word-spacing: 3px;
+}
+
+body{
+	background-image: url("images/main_background.jpg");
+	background-size: 25%;
+	background-repeat: repeat;
+	margin: 0px 0px 0px 0px;
+	border-color: none;
+	border-width: 1px;
+}
+
+main{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	align-content: ;
+}
+
+.grid {
+display: grid;  
+grid-column-gap: 10px;
+grid-row-gap: 15px;
+}
+
+/*Clase celdas para las secciones*/
+.sectionMaker{
+	width: 100%;
+	height: 320px;
+	border: 2px solid #000;
+	background-color: #EBEDEF;
+	margin: 10px 10px 10px 10px;
+	border-style: solid;
+	border-color: black;
+	border-width: 2px;
+}
+
+/*Clase descripcion para la descripcion de los productos*/
+.descriptionProducts{
+	color: gray;
+	font-style: normal;
+	font-family: 'PT Sans', sans-serif;
+	font-size: 100%;
+	font-weight: normal;
+	text-align: justify-all;
+	text-transform: none;
+	line-height: none;
+	text-decoration: none;
+	letter-spacing: 0px;
+	word-spacing: 2px;
+}
+
+.rotation{
+	width: 15%;
+	background-color: red;
+	flex: 1;
+	margin: 10px 10px 10px 10px;
+	padding: 10px 10px 10px 10px;
+	transform: rotate(5deg);
+}
+
+.transition{
+	background-image: linear-gradient(orange, red);
+	transition: height 1s, widht 1s;
+}
+
+.transition:hover{
+	height: 150px;
+	width: 150px;
+}
+
+/*Texto para el texto de "Formulario de contacto" del footer*/
+.formText{
+	color: gray;
+	font-style: italic;
+	font-family: 'Andada Pro', serif;
+	font-size: 100%;
+	font-weight: bold;
+	text-align: justify-all;
+	text-transform: none;
+	line-height: none;
+	text-decoration: none;
+	letter-spacing: 0px;
+	word-spacing: 2px;
+	animation-name: orderAnimation;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in;
+	animation-duration: 4s;
+	animation-delay: 0s;
+}
+
+/*Clase categoria para el formato del selector de categorias*/
+.categorySelector{
+	background-color: mintcream;
+	color: black;
+	font-style: italic;
+	font-family: 'PT Sans', sans-serif;
+	font-size: 100%;
+	font-weight: normal;
+	text-align: center;
+	text-transform: none;
+	line-height: none;
+	text-decoration: line-through;
+	letter-spacing: 0px;
+	word-spacing: 1px;
+	border-style: solid;
+	border-color: black;
+	border-width: 1px;
+	transform: skewY(10deg);
+	width: 30%;
+	margin: 50px 10px 50px 50px;
+	padding: 0px 10px 10px 10px;
+}
+
+.border {
+   border: 1px solid black;
+}
+
+.titleGradient{
+	background-image: linear-gradient(dimgray, lightgray);
+}
+
+
+/*id viñeta menu de navegacion*/
+#navigationMenu{
+	display: inline-block;
+	color: orange;
+	list-style: circle;
+	list-style-image: url("https://img.icons8.com/ios/10/000000/sphere.png");
+	list-style-position: outside;
+	margin-right: 10px;
+	padding-right: 10px;
+	padding-left: 10px;
+	border-color: black;
+	border-style: solid;
+}
+
+/*Formato para el menu desplegable para busqueda por defecto/popularidad/precio*/
+#orderSelector{
+	align-content: center;
+	color: indianred;
+	list-style-image: none;
+	list-style: none;
+	list-style-position: outside;
+	border-style: solid;
+	border-color: gray;
+	border-width: 2;
+	padding: 1px 1px 1px 1px;
+}
+
+/*id encabezado para los formatos de los encabezados de la tabla de productos*/
+#headerTable{
+	color: #AAA518;
+	font-style: normal;
+	font-family: 'PT Sans', sans-serif;
+	font-size: 100%;
+	font-weight: normal;
+	text-align: center;
+	text-transform: none;
+	line-height: none;
+	text-decoration: none;
+	letter-spacing: 3px;
+	word-spacing: 0px;
+	padding: 1px 1px 1px 1px;
+}
+
+/*id texto Beneficios de la tabla productos*/
+#benefitsText{
+	color: #018FEB;
+	font-style: italic;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 100%;
+	font-weight: normal;
+	text-align: center;
+	text-transform: capitalize;
+	line-height: none;
+	text-decoration: none;
+	letter-spacing: 3px;
+	word-spacing: 8px;
+	padding: 1px 1px 1px 1px;
+}
+
+  @media only screen and (min-width: 320px) {
+	#grilla {
+            grid-template-columns: repeat(3, 1fr);
+      }
+      .border {
+    	border: 1px solid red;
+    	background-color: orange;
+     }
+  }
+
+  @media only screen and (min-width: 768px) {
+	#grilla {
+            grid-template-columns: repeat(3, 1fr);
+      }
+      .border {
+    	border: 6px solid black;
+    	background-color: green;
+     }
+  }
+
+  @media only screen and (min-width: 1024px) {
+	#grilla {
+            grid-template-columns: repeat(3, 1fr);
+      }
+      .border {
+    	border: 10px solid black;
+    	background-color: #FFF;
+     }
+  }
+
+  @keyframes orderAnimation{
+  	0%{width: 100px;}
+  	25%{width: 300px;}
+  	50%{
+  		width: 100px;
+  		background-color: pink;
+  	}
+  	75%{width: 300px;}
+  	100%{width: 100px;
+  	background-color: lightgray;}
+  }
+
+  @keyframes aparition{
+  	0%{
+  		opacity: 0;
+  	}
+  	100%{
+  		opacity: 1;
+  	}
+  }
