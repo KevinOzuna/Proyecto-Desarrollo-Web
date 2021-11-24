@@ -1,10 +1,30 @@
-@charset "UTF-8";
-p {
-  color: red;
-}
+$blue: #4285f4;
+$green: #0f9243;
+$black: black;
+$wihite: rgb(10, 5, 5);
+$red: darkred;
 
-p span {
-  background-color: green;
+$xs: 15px;
+$small: 20px;
+$med: 40px;
+$large: 60px;
+$xl: 80px;
+$pColor: rojo;
+
+p {
+  @if $pColor == azul {
+    color: blue;
+  } @else if $pColor == rojo {
+    color: red;
+  } @else if $pColor == verde {
+    color: green;
+  } @else {
+    color: black;
+  }
+
+  span {
+    background-color: green;
+  }
 }
 
 /*CSS reset*/
@@ -13,21 +33,19 @@ p span {
   padding: 0;
 }
 
-.headersType-1 {
-  width: 2em;
+@for $i from 1 through 3 {
+  .headersType-#{$i} {
+    width: 2em * $i;
+  }
 }
 
-.headersType-2 {
-  width: 4em;
-}
-
-.headersType-3 {
-  width: 6em;
+@mixin sizes($width, $height) {
+  height: $xl - $xs;
+  width: $large + $med;
 }
 
 .box {
-  height: 65px;
-  width: 100px;
+  @include sizes(500px, 50px);
 }
 
 /*Formato h1*/
@@ -77,12 +95,9 @@ h3 {
   letter-spacing: 0px;
   word-spacing: 0;
   margin: 1px 2px 1px 2 px;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
-  -webkit-animation-name: aparition;
-          animation-name: aparition;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
+  animation-duration: 2s;
+  animation-name: aparition;
+  animation-iteration-count: infinite;
 }
 
 /*Formato h4*/
@@ -98,30 +113,26 @@ h4 {
   text-decoration: none;
   letter-spacing: 4px;
   word-spacing: 10px;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
-  -webkit-animation-name: aparition;
-          animation-name: aparition;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
+  animation-duration: 2s;
+  animation-name: aparition;
+  animation-iteration-count: infinite;
 }
 
 #grilla {
-  display: -ms-grid;
   display: grid;
-      grid-template-areas: "header header header" "main main publicidad" "main main publicidad" "footer footer footer";
-  -ms-grid-rows: 100px 1fr 1fr 150px;
-      grid-template-rows: 100px 1fr 1fr 150px;
-  -ms-grid-columns: 20% auto 15%;
-      grid-template-columns: 20% auto 15%;
+  grid-template-areas:
+    "header header header"
+    "main main publicidad"
+    "main main publicidad"
+    "footer footer footer";
+  grid-template-rows: 100px 1fr 1fr 150px;
+  grid-template-columns: 20% auto 15%;
   grid-row-gap: 10px;
   grid-column-gap: 10px;
   height: 100vh;
   margin: 0;
   justify-items: center;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
+  align-items: stretch;
 }
 
 .border {
@@ -130,34 +141,17 @@ h4 {
 }
 
 header {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
   grid-area: header;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
+  align-items: stretch;
 }
-
 footer {
-  -ms-grid-row: 4;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
   grid-area: footer;
 }
-
 main#main {
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 2;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
   grid-area: main;
 }
 
 aside {
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 2;
-  -ms-grid-column: 3;
   grid-area: publicidad;
 }
 
@@ -224,8 +218,7 @@ body header nav ul li a {
 section nav ul {
   list-style: none;
   font-size: 0;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  align-content: center;
   margin: 1% 25% 1% 25%;
 }
 
@@ -269,9 +262,6 @@ ul li {
 
 /*Formato vertical slider*/
 aside {
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 2;
-  -ms-grid-column: 3;
   grid-area: publicidad;
   color: goldenrod;
   font-style: normal;
@@ -288,9 +278,6 @@ aside {
 
 /*Formato footer*/
 footer {
-  -ms-grid-row: 4;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
   grid-area: footer;
   width: 100%;
   height: 150px;
@@ -362,25 +349,14 @@ body {
 }
 
 main {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
 }
 
 .grid {
-  display: -ms-grid;
   display: grid;
   grid-column-gap: 10px;
   grid-row-gap: 15px;
@@ -416,19 +392,14 @@ main {
 .rotation {
   width: 15%;
   background-color: red;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  flex: 1;
   margin: 10px 10px 10px 10px;
   padding: 10px 10px 10px 10px;
-  -webkit-transform: rotate(5deg);
-          transform: rotate(5deg);
+  transform: rotate(5deg);
 }
 
 .transition {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(orange), to(red));
   background-image: linear-gradient(orange, red);
-  -webkit-transition: height 1s, widht 1s;
   transition: height 1s, widht 1s;
 }
 
@@ -450,16 +421,11 @@ main {
   text-decoration: none;
   letter-spacing: 0px;
   word-spacing: 2px;
-  -webkit-animation-name: orderAnimation;
-          animation-name: orderAnimation;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-timing-function: ease-in;
-          animation-timing-function: ease-in;
-  -webkit-animation-duration: 4s;
-          animation-duration: 4s;
-  -webkit-animation-delay: 0s;
-          animation-delay: 0s;
+  animation-name: orderAnimation;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
+  animation-duration: 4s;
+  animation-delay: 0s;
 }
 
 /*Clase categoria para el formato del selector de categorias*/
@@ -479,8 +445,7 @@ main {
   border-style: solid;
   border-color: black;
   border-width: 1px;
-  -webkit-transform: skewY(10deg);
-          transform: skewY(10deg);
+  transform: skewY(10deg);
   width: 30%;
   margin: 50px 10px 50px 50px;
   padding: 0px 10px 10px 10px;
@@ -491,7 +456,6 @@ main {
 }
 
 .titleGradient {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(dimgray), to(lightgray));
   background-image: linear-gradient(dimgray, lightgray);
 }
 
@@ -511,8 +475,7 @@ main {
 
 /*Formato para el menu desplegable para busqueda por defecto/popularidad/precio*/
 #orderSelector {
-  -ms-flex-line-pack: center;
-      align-content: center;
+  align-content: center;
   color: indianred;
   list-style-image: none;
   list-style: none;
@@ -557,8 +520,7 @@ main {
 
 @media only screen and (min-width: 320px) {
   #grilla {
-    -ms-grid-columns: (1fr)[3];
-        grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
   .border {
     border: 1px solid red;
@@ -568,8 +530,7 @@ main {
 
 @media only screen and (min-width: 768px) {
   #grilla {
-    -ms-grid-columns: (1fr)[3];
-        grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
   .border {
     border: 6px solid black;
@@ -579,32 +540,11 @@ main {
 
 @media only screen and (min-width: 1024px) {
   #grilla {
-    -ms-grid-columns: (1fr)[3];
-        grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
   .border {
     border: 10px solid black;
     background-color: #fff;
-  }
-}
-
-@-webkit-keyframes orderAnimation {
-  0% {
-    width: 100px;
-  }
-  25% {
-    width: 300px;
-  }
-  50% {
-    width: 100px;
-    background-color: pink;
-  }
-  75% {
-    width: 300px;
-  }
-  100% {
-    width: 100px;
-    background-color: lightgray;
   }
 }
 
@@ -625,15 +565,6 @@ main {
   100% {
     width: 100px;
     background-color: lightgray;
-  }
-}
-
-@-webkit-keyframes aparition {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
   }
 }
 
@@ -674,23 +605,23 @@ main {
   color: blueviolet;
 }
 
-.footer__div-margin, .footer__div-margin--new {
+.footer__div-margin {
   margin: 1px 2px 2px 1px;
 }
 
 .footer__div-margin--new {
+  @extend.footer__div-margin;
   background-color: burlywood;
 }
 
-.btn--twitter {
-  background-color: #55acee;
-}
+$redes: (
+  twitter: #55acee,
+  facebook: #3a5795,
+  send-mail: #c25e30,
+);
 
-.btn--facebook {
-  background-color: #3a5795;
+@each $red, $color in $redes {
+  .btn--#{$red} {
+    background-color: $color;
+  }
 }
-
-.btn--send-mail {
-  background-color: #c25e30;
-}
-/*# sourceMappingURL=styles.css.map */

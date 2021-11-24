@@ -8,8 +8,16 @@
 	<link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
 
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 	<title>Productos</title>
+
+<!-- enlaces a los archivos en internet CDN - incio -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- enlaces a los archivos en internet CDN - fin -->
 	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
@@ -55,6 +63,21 @@
 					<li id="orderSelector">Ordenar por precio mas bajo</li>
 					<li id="orderSelector">Ordenar por precio mas alto</li>
 			</nav>
+
+			<div class="container">                                        
+				<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Ordenar Por
+				  </button>
+				  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+					<button class="dropdown-item" type="button">Defecto</button>
+					<button class="dropdown-item" type="button">Popularidad</button>
+					<button class="dropdown-item" type="button">Precio mas bajo</button>
+					<button class="dropdown-item" type="button">Precio mas alto</button>
+				  </div>
+				</div>
+			  </div>
+
+			
 			<!--Se mostraran 5 productos por pagina-->
 			<table border="2">
 				<tr>
@@ -131,14 +154,17 @@
 		<!--Menu de categorias para mejorar la busqueda, el cual se mostrará del lado izquierdo-->
 		<aside>
 			<nav>
-				<h3>Categorias</h3>
-				<ul>
-					<li class="categorySelector">Categoria 1</li>
-					<li class="categorySelector">Categoria 2</li>
-					<li class="categorySelector">Categoria 3</li>
-					<li class="categorySelector">Categoria 4</li>
-					<li class="categorySelector">Categoria 5</li>
-				</ul>
+				<div class="container">                                        
+					<button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Categorias
+					  </button>
+					  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+						<button class="dropdown-item" type="button">Categoria 1</button>
+						<button class="dropdown-item" type="button">Categoria 2</button>
+						<button class="dropdown-item" type="button">Categoria 3</button>
+					  </div>
+					</div>
+				  </div>
 			</nav>
 		</aside>
 	</main>
